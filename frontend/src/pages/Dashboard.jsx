@@ -13,6 +13,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState({ name: '', description: '', color: '#7c6bef' });
   const [creating, setCreating] = useState(false);
@@ -52,7 +53,7 @@ export default function Dashboard() {
   return (
     <div className="app-layout">
       {/* Sidebar */}
-      <aside className="sidebar">
+      <aside className={`sidebar${sidebarOpen ? ' open' : ''}`}>
         <div className="sidebar-logo">
           <div className="sidebar-logo-icon">⚡</div>
           <div>
@@ -89,10 +90,12 @@ export default function Dashboard() {
           </div>
         </div>
       </aside>
+      <div className={`sidebar-backdrop${sidebarOpen ? ' open' : ''}`} onClick={() => setSidebarOpen(false)} />
 
       {/* Main */}
       <main className="main-content">
         <div className="topbar">
+          <button className="hamburger" onClick={() => setSidebarOpen(true)}>☰</button>
           <div className="topbar-title">Dashboard</div>
           <button className="btn-add" onClick={() => setShowModal(true)}>+ New Project</button>
         </div>

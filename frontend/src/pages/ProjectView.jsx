@@ -18,6 +18,7 @@ export default function ProjectView() {
   const [stats, setStats] = useState(null);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [myRole, setMyRole] = useState('Member');
 
   // Modals
@@ -148,7 +149,7 @@ export default function ProjectView() {
   return (
     <div className="app-layout">
       {/* Sidebar */}
-      <aside className="sidebar">
+      <aside className={`sidebar${sidebarOpen ? ' open' : ''}`}>
         <div className="sidebar-logo">
           <div className="sidebar-logo-icon">⚡</div>
           <div>
@@ -189,10 +190,12 @@ export default function ProjectView() {
           </div>
         </div>
       </aside>
+      <div className={`sidebar-backdrop${sidebarOpen ? ' open' : ''}`} onClick={() => setSidebarOpen(false)} />
 
       {/* Main */}
       <main className="main-content">
         <div className="topbar">
+          <button className="hamburger" onClick={() => setSidebarOpen(true)}>☰</button>
           <div className="topbar-title">
             {project?.name}
             <span className="topbar-sub">{myRole}</span>
