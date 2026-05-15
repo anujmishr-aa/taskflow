@@ -29,48 +29,45 @@ export default function Login() {
   };
 
   return (
-    <div style={{ display:'flex', minHeight:'100vh', fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" }}>
+    <div style={{ display: 'flex', flexDirection: window.innerWidth < 768 ? 'column' : 'row', minHeight: '100vh', fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" }}>
 
       {/* ── Left Hero ── */}
-      <div style={{ flex:1, background:'linear-gradient(135deg,#0f0c29 0%,#1a1a3e 45%,#24243e 100%)', position:'relative', display:'flex', flexDirection:'column', justifyContent:'space-between', padding:'40px', overflow:'hidden' }}>
+      <div style={{ flex: 1, background: 'linear-gradient(135deg,#0f0c29 0%,#1a1a3e 45%,#24243e 100%)', position: 'relative', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '40px', overflow: 'hidden' }}>
         {/* Glow */}
-        <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 25% 55%,rgba(124,107,239,0.18) 0%,transparent 65%)', pointerEvents:'none' }} />
-
-        {/* Floating project cards */}
-        
+        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 25% 55%,rgba(124,107,239,0.18) 0%,transparent 65%)', pointerEvents: 'none' }} />
 
         {/* Main hero text */}
-        <div style={{ position:'relative', zIndex:1, marginTop:'auto', marginBottom:'auto', paddingTop:80 }}>
-          <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:32 }}>
-            <div style={{ width:38, height:38, borderRadius:10, background:'#7c6bef', display:'flex', alignItems:'center', justifyContent:'center', fontSize:20 }}>⚡</div>
-            <span style={{ fontSize:20, fontWeight:700, color:'#fff' }}>TaskFlow</span>
+        <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', marginBottom: 'auto', paddingTop: 80 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 32 }}>
+            <div style={{ width: 38, height: 38, borderRadius: 10, background: '#7c6bef', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20 }}>⚡</div>
+            <span style={{ fontSize: 20, fontWeight: 700, color: '#fff' }}>TaskFlow</span>
           </div>
-          <h1 style={{ fontSize:44, fontWeight:800, color:'#fff', lineHeight:1.15, marginBottom:16, letterSpacing:'-1.5px' }}>
+          <h1 style={{ fontSize: 44, fontWeight: 800, color: '#fff', lineHeight: 1.15, marginBottom: 16, letterSpacing: '-1.5px' }}>
             Manage tasks<br />like a pro team.
           </h1>
-          <p style={{ fontSize:15, color:'rgba(255,255,255,0.5)', lineHeight:1.75, maxWidth:360, marginBottom:30 }}>
+          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, maxWidth: 360, marginBottom: 30 }}>
             Assign work, track progress, and hit deadlines — all in one place with role-based access.
           </p>
-          <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
-            {['📋 Project boards','🔐 Role-based access','📅 Deadline tracking'].map(p => (
-              <span key={p} style={{ background:'rgba(255,255,255,0.07)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:20, padding:'6px 14px', fontSize:12, color:'rgba(255,255,255,0.65)' }}>{p}</span>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            {['📋 Project boards', '🔐 Role-based access', '📅 Deadline tracking'].map(p => (
+              <span key={p} style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 20, padding: '6px 14px', fontSize: 12, color: 'rgba(255,255,255,0.65)' }}>{p}</span>
             ))}
           </div>
         </div>
 
         {/* Stats footer */}
-        <div style={{ display:'flex', gap:36, position:'relative', zIndex:1, borderTop:'1px solid rgba(255,255,255,0.08)', paddingTop:24 }}>
-          {[['24','Tasks tracked'],['6','Team members'],['98%','On-time rate']].map(([n,l]) => (
+        <div style={{ display: 'flex', gap: 36, position: 'relative', zIndex: 1, borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 24 }}>
+          {[['24', 'Tasks tracked'], ['6', 'Team members'], ['98%', 'On-time rate']].map(([n, l]) => (
             <div key={l}>
-              <div style={{ fontSize:22, fontWeight:700, color:'#fff' }}>{n}</div>
-              <div style={{ fontSize:11, color:'rgba(255,255,255,0.38)', marginTop:2 }}>{l}</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: '#fff' }}>{n}</div>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.38)', marginTop: 2 }}>{l}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* ── Right Form ── */}
-      <div style={{ width:480, background:'#f8f9fc', display:'flex', alignItems:'center', justifyContent:'center', padding:'40px 36px' }}>
+      <div style={{ width: '100%', maxWidth: 480, background:'#f8f9fc', display:'flex', alignItems:'center', justifyContent:'center', padding:'40px 36px' }}>
         <div style={{ width:'100%', maxWidth:400 }}>
 
           <div style={{ display:'flex', alignItems:'center', gap:9, marginBottom:40 }}>

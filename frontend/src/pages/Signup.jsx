@@ -81,7 +81,7 @@ export default function Signup() {
       </div>
 
       {/* ── Right Form ── */}
-      <div style={{ width:480, background:'#f8f9fc', display:'flex', alignItems:'center', justifyContent:'center', padding:'40px 36px' }}>
+      <div style={{ width: '100%', maxWidth: 480, background:'#f8f9fc', display:'flex', alignItems:'center', justifyContent:'center', padding:'40px 36px' }}>
         <div style={{ width:'100%', maxWidth:400 }}>
 
           <div style={{ display:'flex', alignItems:'center', gap:9, marginBottom:40 }}>
