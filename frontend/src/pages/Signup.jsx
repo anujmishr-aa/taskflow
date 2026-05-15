@@ -37,8 +37,7 @@ export default function Signup() {
   });
 
   return (
-    <div style={{ display:'flex', minHeight:'100vh', fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" }}>
-
+<div style={{ display: 'flex', flexDirection: window.innerWidth < 768 ? 'column' : 'row', minHeight: '100vh', fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" }}>
       {/* ── Left Hero ── */}
       <div style={{ flex:1, background:'linear-gradient(135deg,#0f0c29 0%,#1a1a3e 45%,#24243e 100%)', position:'relative', display:'flex', flexDirection:'column', justifyContent:'space-between', padding:'40px', overflow:'hidden' }}>
         <div style={{ position:'absolute', inset:0, background:'radial-gradient(ellipse at 70% 40%,rgba(124,107,239,0.15) 0%,transparent 60%)', pointerEvents:'none' }} />
